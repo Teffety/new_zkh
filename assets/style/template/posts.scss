@@ -1,0 +1,111 @@
+@import '../font';
+@import '../mixin';
+@import '../component';
+@import '../function';
+
+   .post__window {
+       position: fixed;
+       z-index: 100;
+       @include top_left_bottom_right;
+    //   background-color: $modalBackground;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       @include size(100%);
+        padding: 10px;
+
+       @include media_grid(tableSize) {
+           padding: 10px;
+       }
+
+       @include media_grid(phoneLarge) {
+           padding: 10px;
+       }
+
+       @include media_grid(phoneMedium) {
+
+           padding: 10px;
+       }
+
+       @include media_grid(phone) {
+
+           padding: 10px;
+       }
+    }
+.posts{
+       padding: 30px;
+       margin: 0;
+       border-radius: 10px;
+       @include size(70%,90%);
+       grid-template-rows: 20% 70% 10%;
+       grid-template-columns: 100%;
+       justify-content: center;
+       position: relative;
+       display: grid;
+       background: rgb(255, 255, 255);
+       box-shadow: 2px -1px 5px black;
+
+       &-header {
+           @include size(100%);
+           grid-row:1;
+           h1{
+               text-align: center;
+           }
+       }
+
+       &-body {
+           @include size(100%);
+           grid-row:2;
+           overflow-y: scroll;
+        p{
+            text-align: center;
+        }
+       }
+
+       &-footer {
+           grid-row:3;
+           display: flex;
+           justify-content: space-between;
+           @include size(100%);
+
+       }
+
+       @include media_grid(tableSize) {
+           @include size(85%, 85%);
+           padding: 30px;
+       }
+
+       @include media_grid(phoneLarge) {
+           @include size(85%, 85%);
+           padding: 20px;
+       }
+
+       @include media_grid(phoneMedium) {
+           @include size(90%, 90%);
+           padding: 5px;
+       }
+
+       @include media_grid(phone) {
+           @include size(90%, 90%);
+           padding: 5px;
+       }
+
+       }
+
+
+       .close {
+           @include size(5rem, 2rem);
+           color: $hoverColorText;
+           position: absolute;
+           top: 0;
+           right: 0;
+           padding: 5px;
+           text-align: center;
+           text-decoration: none;
+           right: 0;
+
+           &:hover {
+               color: $colorText;
+           }
+       }
+

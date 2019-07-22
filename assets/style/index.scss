@@ -1,0 +1,500 @@
+@import 'font';
+@import 'mixin';
+@import 'component';
+@import 'function';
+
+html,
+body {
+    @include bodyAndHtml;
+    font-size: $mainFontSize;
+    max-height: 100%;
+
+    @include media_grid(desktop) {
+        font-size: $mainFontSize - 1;
+    }
+
+    @include media_grid(desktopSmall) {
+        font-size: $mainFontSize - 2;
+    }
+
+    @include media_grid(tableSize) {
+        font-size: $mainFontSize - 3;
+    }
+
+    @include media_grid(phoneLarge) {
+        font-size: $mainFontSize - 3;
+    }
+
+    @include media_grid(phoneMedium) {
+        font-size: $mainFontSize - 3;
+    }
+
+    @include media_grid(phone) {
+        font-size: $mainFontSize - 3;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
+
+#wrapper {
+    display: grid;
+    background: $colorBody;
+    position: relative;
+    min-height: 100%;
+    min-width: 100%;
+
+    @include media_grid(desktop) {
+        grid-template-rows: 5% 95%;
+        grid-template-columns: 25% 75%;
+    }
+
+    @include media_grid(desktopSmall) {
+        grid-template-rows: 5% 95%;
+        grid-template-columns: 25% 75%;
+    }
+
+    @include media_grid(tableSize) {
+        grid-template-rows: 100px 70% 10%;
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    @include media_grid(phoneLarge) {
+        grid-template-rows: 100px 70% 10%;
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    @include media_grid(phoneMedium) {
+        grid-template-rows: 100px 70% 10%;
+        grid-template-columns: 5% 90% 5%;
+    }
+
+    @include media_grid(phone) {
+        grid-template-rows: 100px 70% 10%;
+        grid-template-columns: 5% 90% 5%;
+    }
+
+
+}
+
+header {
+
+    display: flex;
+    position: static;
+    grid-column: 1;
+    grid-row: 1;
+    padding: rem(20);
+    font-family: $some1;
+
+    @include media_grid(tableSize) {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    @include media_grid(phoneLarge) {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+
+    }
+
+    @include media_grid(phoneMedium) {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+
+    }
+
+    @include media_grid(phone) {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1;
+    }
+}
+
+main {
+    padding-left: rem(20);
+    padding-top: rem(20);
+    padding-right: rem(20);
+    padding-bottom: 0px;
+    font-family: $some1;
+    position: relative;
+    @include size(100%);
+    grid-column: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+
+    @include media_grid(tableSize) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    @include media_grid(phoneLarge) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    @include media_grid(phoneMedium) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    @include media_grid(phone) {
+        grid-column: 2;
+        grid-row: 2;
+    }
+}
+
+footer {
+    position: relative;
+    grid-column: 1;
+    grid-row: 2;
+    font-family: $some3;
+    bottom: 0;
+    display: flex;
+    padding: rem(20);
+    justify-content: space-between;
+    align-items: flex-end;
+    z-index: 0;
+
+    .footer__info {
+        font-size: rem(15);
+        text-align: center;
+        color: $btmColors;
+
+        a {
+            color: $btmColors;
+        }
+    }
+
+    .copyright {
+
+        font-size: rem(11);
+        text-align: center;
+        padding: 5px;
+
+        .copyright__link {
+            color: $btmColors;
+        }
+    }
+
+    @include media_grid(tableSize) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    @include media_grid(phoneLarge) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    @include media_grid(phoneMedium) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    @include media_grid(phone) {
+        grid-column: 2;
+        grid-row: 3;
+    }
+}
+
+
+// Navbar from header
+nav {
+    @include size(100%);
+    grid-template-rows: repeat(3, 30%);
+    justify-content: center;
+    z-index: 100;
+
+    .nav__ul {
+        padding: 0;
+        margin: 0;
+        padding-top:20px;
+
+
+        @mixin navUlActive {
+            display: none;
+            transition: 1s;
+
+            &.active {
+                position: absolute;
+                padding: rem(50);
+                background: $colorBody;
+                height: 100%;
+                width: 100%;
+                display: grid;
+                grid-template-rows: repeat(5, rem(100));
+                justify-content: space-around;
+                align-items: center;
+                grid-gap: 10px;
+                right: 0;
+                top: 0;
+                animation: activeNavbar .4s ease;
+            }
+
+        }
+
+        @include media_grid(tableSize) {
+            @include navUlActive;
+        }
+
+        @include media_grid(phoneLarge) {
+            @include navUlActive;
+        }
+
+        @include media_grid(phoneMedium) {
+            @include navUlActive
+        }
+
+        @include media_grid(phone) {
+            @include navUlActive
+        }
+
+        .nav__ul__links {
+            text-align: center;
+            padding-top: rem(20);
+
+
+            .nav_link {
+                padding-top: rem(25);
+                padding-bottom: rem(25);
+                color: white;
+                letter-spacing: 2px;
+                position: relative;
+                font-size: rem(25);
+                transition: .6s;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .nav__logo {
+        @include size (100%, 8rem);
+        text-align: center;
+
+        img {
+            @include size (8rem);
+        }
+    }
+}
+
+// Burger btn and actions
+.burger {
+    @include size(50px);
+    display: none;
+
+    @include media_grid(tableSize) {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99999;
+    }
+
+    @include media_grid(phoneLarge) {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99999;
+    }
+
+    @include media_grid(phoneMedium) {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99999;
+    }
+
+    @include media_grid(phone) {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 99999;
+    }
+
+
+
+    .burger__btn {
+        position: relative;
+        display: block;
+        @include size($whBurger);
+
+        .burger__btn__span {
+            position: absolute;
+            top: 50%;
+            @include size(100%, 2px);
+
+            &::after,
+            &::before {
+                content: '';
+                @include size(100%, 2px);
+                position: absolute;
+                transition: 1s;
+            }
+
+            &::after {
+                background: $btmColors;
+                transform: translateY($whBurger/3);
+            }
+
+            &::before {
+                background: $btmColors;
+                transform: translateY(-$whBurger/3);
+            }
+        }
+
+        &.defualt {
+            .burger__btn__span {
+                background: $btmColors;
+                animation-name: fadeOut;
+                transition: 1s;
+                animation-direction: alternate-reverse;
+            }
+        }
+
+        &.active {
+            .burger__btn__span {
+                background: none;
+                transition: 1s;
+
+                &::after {
+                    background: $btmColors;
+                    transform: rotate(35deg);
+                }
+
+                &::before {
+                    background: $btmColors;
+                    transform: rotate(-35deg);
+                }
+
+            }
+        }
+    }
+}
+
+
+
+@keyframes fadeOut {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes zoom {
+    from {
+        opacity: 0;
+        transform: scale3d(0.3, 0.3, 0.3);
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+    animation-name: zoom;
+}
+
+.zoom-leave-active {
+    animation-direction: reverse;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition-duration: 0.5s;
+    transition-property: height, opacity;
+    transition-timing-function: ease;
+    overflow: hidden;
+}
+
+.fade-enter,
+.fade-leave-active {
+    opacity: 0
+}
+
+@keyframes activeNavbar {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+    .loading {
+        position: absolute;
+        font-size: $loadingText;
+        z-index: 1000;
+
+        .point {
+            font-size: $loadingText;
+
+            position: relative;
+
+            &.one {
+                animation: bounce 1s .1s infinite;
+            }
+
+            &.two {
+                animation: bounce 1s .3s infinite;
+            }
+
+            &.three {
+                animation: bounce 1s .5s infinite;
+            }
+        }
+    }
+
+    @keyframes bounce {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+
+@include modal__window;
+

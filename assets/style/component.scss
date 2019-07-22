@@ -1,0 +1,36 @@
+//Sizes
+$wh100:100%;
+$whBurger:40px;
+$loadingText: rem(50);
+
+//Fonts
+$some1:'Alice';
+$some2:'Literata';
+$some3:'LiterataIT';
+$some4:'RubikMonoOne';
+
+//Colors
+$modalBackground:rgba(0, 0, 0, 0.5);
+$navBackground:#50d9f8;
+$hoverColorText:rgb(177, 177, 177);
+$btmColors:rgb(105, 105, 105);
+$colorText:rgb(0, 0, 0);
+$colorBody: linear-gradient(to right bottom, #99f2cd, #68e8e4, #50d9f8, #54ccff, #7cbaff, #aba5ff, #d98ae7, #fd6bba, #ff537f, #ff543b);
+$colorCard:rgba(255, 255, 255, 0.233);
+$colorShadowBTN:rgb(71, 255, 71);
+
+//Main colors 
+$defaul: #ffffff;
+$primary:#000dff;
+$success: #26de81;
+$danger:#fc5c65;
+$warning:#fed330;
+
+
+// Addaptive Sizes
+$mainFontSize:15px;
+$desktopWL:1280px;
+$desktopWS:980px;
+$tableWS:600px;
+$phoneWL:480px;
+$phoneWS:320px;

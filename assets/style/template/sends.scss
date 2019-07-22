@@ -1,0 +1,153 @@
+@import '../font';
+@import '../mixin';
+@import '../component';
+@import '../function';
+
+
+
+#sendInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 30px;
+}
+
+#section__sendFormInfo {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px 2fr 50px 1fr 100px;
+    position: relative;
+    letter-spacing: 1px;
+
+    align-items: center;
+}
+
+legend {
+    text-align: center;
+    grid-row: 1;
+    color:$btmColors;
+      font-family: $some1;
+      font-size: rem(15);
+    &:last-of-type {
+        grid-row: 3;
+    }
+}
+
+.clientInfo,
+.clientData {
+    display: grid;
+    grid-gap: rem(20);
+    padding: 20px;
+
+    @include media_grid(desktop) {
+        grid-template-columns: 33% 33% 33%;
+
+    }
+
+    @include media_grid(desktopSmall) {
+        grid-template-columns: 50% 50%;
+
+    }
+
+    @include media_grid(tableSize) {
+        grid-template-columns: 100%;
+
+    }
+
+    @include media_grid(phoneLarge) {
+        grid-template-columns: 100%;
+
+    }
+
+    @include media_grid(phoneMedium) {
+        grid-template-columns: 100%;
+
+    }
+
+    @include media_grid(phone) {
+        grid-template-columns: 100%;
+
+    }
+}
+
+.clientData {}
+
+.divForInput,
+.clientSend {
+    padding-bottom: 20px;
+    padding-top: 20px;
+    position: relative;
+
+
+    & label {
+        position: absolute;
+        transition: .3s;
+        color: white;
+        z-index: 0;
+        top: 15px;
+        
+    }
+
+    & input[type=text],
+    & input[type=tel] {
+        position: absolute;
+        background-color: transparent;
+        outline: none;
+        font-size: rem(20);
+        border: none;
+        padding: 0 0 10px;
+        width: 100%;
+        border-bottom: 1px solid $btmColors;
+        z-index: 1;
+        transition: .3s;
+
+        &:focus {
+            border-bottom: 1px solid black;
+
+            &~label {
+                top: -5px;
+                font-size: rem(12);
+                
+            }
+
+        }
+
+        &:not(:placeholder-shown)~label {
+            top: -5px;
+            font-size: rem(12);
+            
+        }
+
+    }
+
+
+}
+
+.clientSend {
+    text-align: center;
+
+    input[type=submit] {
+        background: #fffcb7;
+        font-size: rem(15);
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+        transition: .3s;
+          color:$btmColors;
+        background-color: #fff9e7;
+    font-family: $some4;
+        &:focus,
+        &:hover {
+        
+            background-color: $defaul;
+            box-shadow: 0 0 50px $defaul;
+        }
+    }
+}
+
+.section__postScriptumInfo{
+.text{
+    color:white;
+}
+}

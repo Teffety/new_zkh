@@ -1,0 +1,144 @@
+@mixin bodyAndHtml {
+    @include top_left_bottom_right($bottom: null, $right:null);
+    margin: 0;
+    padding: 0;
+    @include size($wh100)
+}
+
+@mixin size ($width, $hight:$width) {
+    width: $width;
+    height: $hight;
+}
+
+@mixin top_left_bottom_right($top:0, $left:0, $bottom:0, $right:0) {
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin flex($display:flex, $j_content:center, $a_items:center, $a_content:null) {
+    display: $display;
+    justify-content: $j_content;
+    align-items: $a_items;
+    align-content: $a_content;
+}
+@mixin media_grid($type){
+       @if $type == phone {
+        @media only screen and (max-width: $phoneWS) { @content; }
+      }
+      @else if $type == phoneMedium {
+        @media only screen and (min-width: $phoneWS + 1) and (max-width: $phoneWL - 1) { @content; }
+      }
+      @else if $type == phoneLarge {
+        @media only screen and (min-width: $phoneWL + 1) and (max-width: $tableWS - 1) { @content; }
+      }
+      @else if $type == tableSize {
+        @media only screen and (min-width: $tableWS + 1) and (max-width: $desktopWS - 1) { @content; }
+      }
+      @else if $type == desktopSmall {
+        @media only screen and (min-width: $desktopWS + 1) and (max-width: $desktopWL - 1) { @content; }
+      }
+      @else if $type ==  desktop {
+        @media only screen and (min-width: $desktopWL) { @content; }
+      }
+}
+
+@mixin modal__window {
+    .modal__window {
+        position: fixed;
+        z-index: 100;
+     @include top_left_bottom_right;
+        background-color:$modalBackground;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 100;
+        padding: 100px;
+        @include media_grid(tableSize) {
+       padding: 30px;
+     }
+
+     @include media_grid(phoneLarge) {
+         padding: 20px;
+     }
+
+     @include media_grid(phoneMedium) {
+          
+           padding: 30px;
+     }
+
+     @include media_grid(phone) {
+          
+           padding: 30px;
+     }
+
+
+
+    }
+
+    .modal {
+        padding: 50px;
+        margin: 0;
+        border-radius: 10px;
+        @include size(65%,85%);
+        grid-template-rows: 10% 70% 10%;
+        grid-template-columns: 100%;
+        justify-content: center;
+        position: relative;
+        display: grid;
+        background: rgb(255, 255, 255);
+        box-shadow: 2px -1px 5px  black;
+      
+        &-header{@include size(100%);
+        }
+        &-body {
+        @include size(100%);
+
+        }
+        &-footer{
+            display:flex;
+            justify-content:space-between;
+            @include size(100%);
+
+        }
+        @include media_grid(tableSize) {
+           @include size(85%,85%);
+            padding: 30px;
+      }
+
+      @include media_grid(phoneLarge) {
+           @include size(85%,85%);
+            padding: 20px;
+      }
+
+      @include media_grid(phoneMedium) {
+           @include size(90%,90%);
+            padding: 5px;
+      }
+
+      @include media_grid(phone) {
+           @include size(90%,90%);
+            padding: 5px;
+      }
+    
+    }
+    
+
+    .close {
+        @include size(5rem,2rem);
+        color: $hoverColorText;
+        position: absolute;
+        top:0;
+        right: 0;
+        padding: 5px;
+        text-align: center;
+        text-decoration: none;
+        right: 0;
+        font-size:rem(25);
+
+        &:hover {
+            color: $colorText;
+        }
+    }
+}

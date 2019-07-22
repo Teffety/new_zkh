@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <main class="notFound">
+            <h1>error 404, page not found</h1>
+        </main>
+    </body>
+</html>
+
+  <transition name="fade">
+      <router-view></router-view>
+  </transition>
+
+
+          <modal text-info="Продолжить...">
+              <template v-slot:header>
+                  <h2>{{info.titel}}</h2>
+              </template>
+              <template v-slot:body>
+                  <p>
+                      {{info.text}}
+                  </p>
+              </template>
+              <template v-slot:footer>
+                  <p>
+                      {{info.author}}
+                  </p>
+                  <p>
+                      {{info.date}}
+
+
+                  </p>
+              </template>
+          </modal>
