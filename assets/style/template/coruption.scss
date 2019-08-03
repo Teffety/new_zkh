@@ -2,3 +2,128 @@
 @import '../mixin';
 @import '../component';
 @import '../function';
+@import '../media';
+
+#coruption {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-around;
+    font-family: $some5;
+    color: $btmColors;
+    @include coruption;
+}
+
+.section__coruption__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 2vw;
+    
+}
+
+.coruption__info {
+    width: 50vw;
+    display: flex;
+    margin: 30px auto;
+    padding: .5vw;
+    justify-content: center;
+    flex-direction: column;
+
+    &:hover {
+        box-shadow: 2px 2px 10px;
+        transform: translate(-15px, -10px);
+        .coruption__name {
+            color: $colorPost;
+        }
+
+    }
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .coruption__name {
+        font-family: $some3;
+        text-transform: uppercase;
+        text-align: center;
+        color: $colorBorderCardRB;
+    }
+
+    .coruption__text {
+        text-align: center;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+    }
+}
+
+.section__coruption__accardion {
+    width: 30vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+
+    .coruption__docs {
+            &:first-child .accardion__btn {
+                border-top: 1px solid $btmColors;
+            }
+    .accardion__btn {
+        padding: 10px;
+        border: 1px solid $btmColors;
+        border-top:none;
+        border-radius: 10px;
+        width: 100%;
+        background: transparent;
+        font-size: rem(20);
+        font-family: $some3;
+         color: $colorPost;
+    
+    }
+    }
+    .accardion__documents {
+        padding: 0;
+        margin: auto;
+        -moz-hyphens: auto;
+        -webkit-hyphens: auto;
+        -ms-hyphens: auto;
+        
+        background-color: $colorCard;
+        border-left: 2px outset $btmColors;
+        border-right: 2px inset $btmColors;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 0 0 10px $btmColors;
+        padding: 5px 0px;
+
+        .accardion__documents__link {
+            padding-bottom: 10px;
+            .accardion__link {
+                color: $btmColors;
+
+            }
+        }
+    }
+}
+
+.accardions-enter-active,
+.accardions-leave-active {
+    transition-duration: 0.3s;
+    transition-property: height, opacity;
+    transition-timing-function: ease;
+    overflow: hidden;
+ 
+}
+
+.accardions-enter,
+.accardions-leave-active {
+    opacity: 0;
+    
+
+}

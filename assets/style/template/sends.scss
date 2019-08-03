@@ -6,10 +6,7 @@
 
 
 #sendInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-right: 30px;
+
 }
 
 #section__sendFormInfo {
@@ -100,7 +97,7 @@ legend {
         border-bottom: 1px solid $btmColors;
         z-index: 1;
         transition: .3s;
-
+        color:$default;
         &:focus {
             border-bottom: 1px solid black;
 
@@ -134,14 +131,14 @@ legend {
         border: none;
         cursor: pointer;
         transition: .3s;
-          color:$btmColors;
+        color:$default;
         background-color: #fff9e7;
     font-family: $some4;
         &:focus,
         &:hover {
         
-            background-color: $defaul;
-            box-shadow: 0 0 50px $defaul;
+            background-color: $default;
+            box-shadow: 0 0 50px $default;
         }
     }
 }

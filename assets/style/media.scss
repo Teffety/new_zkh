@@ -1,0 +1,451 @@
+@import 'mixin';
+
+@mixin menu {
+    @include media_grid(phone) {
+        .burger {
+            display: inline-block;
+        }
+
+        .nav__ul {
+            display: none;
+
+            &.active {
+                display: flex;
+                position: absolute;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                background: $default;
+                flex-direction: column !important;
+                top: 0;
+                height: 50vh;
+                width: 100vw;
+
+                .nav__ul__links {
+                    background-color: $default;
+                    display: flex;
+                }
+
+                .nav_link {
+                    font-size: rem(15);
+                    text-align: center;
+                    margin: auto;
+
+                    &.router-link-exact-active {
+                        span {
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media_grid(phoneMedium) {
+        .burger {
+            display: inline-block;
+
+        }
+
+        .nav__ul {
+            display: none;
+
+            &.active {
+                display: flex;
+                position: absolute;
+                z-index: 999999;
+                justify-content: center;
+                align-items: center;
+                background: $default;
+                flex-direction: column !important;
+                top: 0;
+                height: 50vh;
+                width: 100vw;
+
+                .nav__ul__links {
+                    background-color: $default;
+                    display: flex;
+                }
+
+                .nav_link {
+                    font-size: rem(15);
+                    text-align: center;
+                    margin: auto;
+
+                    &.router-link-exact-active {
+                        span {
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media_grid(phoneLarge) {
+        .burger {
+            display: inline-block;
+        }
+
+        .nav__ul {
+            display: none;
+
+            &.active {
+                display: flex;
+                position: absolute;
+                z-index: 99999;
+                justify-content: center;
+                align-items: center;
+
+                .nav__ul__links {
+                    min-height: 80px;
+                    min-width: 80px;
+                    border: 2px inset $colorCard;
+                    background-color: $default;
+                    display: flex;
+                    border-radius: 100%;
+                    transform: translateY(100px);
+                    margin: 5px;
+                }
+
+                .nav_link {
+                    font-size: rem(15);
+                   width: 80px;
+                   height: 80px;
+                   align-items: center;
+                   display: flex;
+                   justify-content: center;
+                    &.router-link-exact-active {
+                        span {
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media_grid(tableSize) {
+        .burger {
+            display: inline-block;
+        }
+
+        .nav__ul {
+            display: none;
+
+            &.active {
+                display: flex;
+                position: absolute;
+                z-index: 99999;
+                justify-content: center;
+                align-items: center;
+                transition: .5s ease-in;
+
+                .nav__ul__links {
+                    min-height: 80px;
+                    min-width: 80px;
+                    border: 2px inset $colorCard;
+                    margin: 0;
+                    background-color: $default;
+                    display: flex;
+                    border-radius: 100%;
+                    position: absolute;
+
+                    &:first-child {
+                        @include opensM($x:-30vw, $y:5vh, $count:"1");
+
+
+                    }
+
+                    &:last-child {
+                        @include opensM($x:30vw, $y:5vh, $count:"5");
+
+                    }
+
+                    &:nth-child(2) {
+                        @include opensM($x:-15vw, $y:10vh, $count:"2");
+
+                    }
+
+                    &:nth-child(3) {
+                        @include opensM($x:0px, $y:12vh, $count:"3");
+
+                    }
+
+                    &:nth-child(4) {
+                        @include opensM($x:15vw, $y:10vh, $count:"4");
+
+                    }
+                }
+
+                .nav_link {
+                    font-size: rem(15);
+                    width: 80px;
+                    height: 80px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+
+                    &.router-link-exact-active {
+                        span {
+                            animation: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include media_grid(desktopSmall) {
+        .burger {
+            display: none;
+        }
+
+        .nav__ul {
+            display: inline-flex;
+        }
+    }
+
+    @include media_grid(desktop) {
+        .burger {
+            display: none;
+        }
+
+        .nav__ul {
+            display: inline-flex;
+        }
+    }
+}
+
+@mixin askingForm {
+    @include media_grid(phone) {
+        background-color: $hoverColorOne;
+        border-radius: 5px;
+
+        input[type=submit] {
+            color: $default;
+            background-color: transparent;
+        }
+
+        .closeForm {
+            right: 0;
+
+            &::after,
+            &::before {
+                background-color: $modalBackground;
+            }
+        }
+    }
+
+    @include media_grid(phoneMedium) {
+        background-color: $hoverColorOne;
+        border-radius: 5px;
+
+        input[type=submit] {
+            color: $default;
+            background-color: transparent;
+        }
+
+        .closeForm {
+            right: 0;
+
+            &::after,
+            &::before {
+                background-color: $modalBackground;
+            }
+        }
+    }
+
+    @include media_grid(phoneLarge) {
+        background-color: $hoverColorOne;
+        border-radius: 5px;
+
+        input[type=submit] {
+            color: $default;
+            background-color: transparent;
+        }
+
+        .closeForm {
+            right: 0;
+
+            &::after,
+            &::before {
+                background-color: $modalBackground;
+            }
+        }
+    }
+
+    @include media_grid(tableSize) {
+        background-color: $hoverColorOne;
+        border-radius: 5px;
+
+        input[type=submit] {
+            color: $default;
+            background-color: transparent;
+        }
+
+        .closeForm {
+            right: 0;
+
+            &::after,
+            &::before {
+                background-color: $modalBackground;
+            }
+        }
+    }
+
+    @include media_grid(desktopSmall) {
+        background-color: $hoverColorOne;
+        border-radius: 5px;
+
+        input[type=submit] {
+            color: $default;
+            background-color: transparent;
+        }
+
+        .closeForm {
+            right: 0;
+
+            &::after,
+            &::before {
+                background-color: $modalBackground;
+            }
+        }
+    }
+}
+
+@mixin contact {
+    @include media_grid(phone) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+    }
+
+    @include media_grid(phoneMedium) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+    }
+
+    @include media_grid(phoneLarge) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+    }
+}
+
+@mixin coruption {
+    @include media_grid(phone) {
+        display: flex !important;
+        margin: auto !important;
+        flex-direction: column !important;
+
+        .coruption__info {
+            margin: 15px auto !important;
+            width: 80vw !important;
+
+            &:hover {
+                box-shadow: none !important;
+                transform: none !important;
+            }
+        }
+
+        .section__coruption__accardion {
+            width: 100vw !important;
+        }
+    }
+
+    @include media_grid(phoneMedium) {
+        display: flex !important;
+        margin: auto !important;
+        flex-direction: column !important;
+
+        .coruption__info {
+            margin: 15px auto !important;
+            width: 80vw !important;
+
+            &:hover {
+                box-shadow: none !important;
+                transform: none !important;
+            }
+        }
+
+        .section__coruption__accardion {
+            width: 100vw !important;
+        }
+    }
+
+    @include media_grid(phoneLarge) {
+        display: flex !important;
+        margin: auto !important;
+        flex-direction: column !important;
+
+        .coruption__info {
+            margin: 15px auto !important;
+            width: 80vw !important;
+
+            &:hover {
+                box-shadow: none !important;
+                transform: none !important;
+            }
+        }
+
+        .section__coruption__accardion {
+            width: 100vw !important;
+        }
+    }
+
+    @include media_grid(tableSize) {
+        display: flex !important;
+        margin: auto !important;
+        flex-direction: column !important;
+
+        .coruption__info {
+            margin: 15px auto !important;
+            width: 80vw !important;
+
+            &:hover {
+                box-shadow: none !important;
+                transform: none !important;
+            }
+        }
+
+        .section__coruption__accardion {
+            width: 100vw !important;
+        }
+    }
+}
+@mixin about {
+    @include media_grid(phone) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+        .section__about__carusel{
+            display: none;
+        }
+    }
+
+    @include media_grid(phoneMedium) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+        .section__about__carusel{
+            display: none;
+        }
+    }
+
+    @include media_grid(phoneLarge) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+        .section__about__carusel{
+            display: none;
+        }
+    }
+
+ @include media_grid(tableSize) {
+        display: flex !important;
+        margin: auto;
+        flex-direction: column !important;
+    }
+}

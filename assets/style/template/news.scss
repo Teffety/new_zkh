@@ -7,8 +7,7 @@
 .news__section {
     display: grid;
     position: relative;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 30vh;
+    
     grid-row-gap: 2vw;
     grid-column-gap: 2vh;
     padding: rem(13);
@@ -16,7 +15,7 @@
     @include size(100%, null);
 
     @include media_grid(desktop) {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     @include media_grid(desktopSmall) {
@@ -46,13 +45,15 @@
     display: flex;
     @include size(100%);
     flex-direction: column;
-    box-shadow: 0 0 10px $btmColors;
-    background-color: $colorCard;
-    border: 1px solid none;
-    border-radius: 10px;
-    padding: rem(20);
-
-
+    padding: rem(18);
+    font-family: $some5;
+      border-radius: 20px;
+    border:1px solid $btmColors;
+    &:hover{
+        box-shadow: 1px 5px 15px $colorText;
+        background-color: $colorCard;
+        border:1px solid transparent;
+    }
     .news__article__content {
         margin: 0;
         @include size(100%);
@@ -61,14 +62,13 @@
         .news__h3 {
             margin: 0;
             text-align: center;
-            height: 15%;
-            padding: 3vh;
-            color:black;
+            padding: 1vh;
+            color:$colorText;
         }
 
         .text__info {
             width: 100%;
-            color: black;
+            color: $colorText;
 
             .news__text {
                 height: 100%;
@@ -78,7 +78,7 @@
 
         .goPosts {
             margin: 0;
-            color: black;
+            color: $colorText;
             height: 5%;
             text-align: center;
         }
@@ -86,37 +86,47 @@
 
     .news__article__info {
         @include size(100%);
-        color: black;
+        color: $colorText;
         text-align: center;
         display: flex;
-        align-items: center;
+        align-items: flex-end;
         justify-content: space-between;
 
     }
+
 }
+    .search__block{
+        display: flex;
+        margin: auto;
+        position: relative;
+  width: 100%;
+    justify-content: center;
+    }
 
 .news__search {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: rem(230);
+    margin: auto;
 
     .iconSearch {
         @include size(4vh);
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        z-index: 1;
     }
 
     .searchNews__text {
         background: white;
-        border-radius: 10px;
-        padding: none;
+        border-radius: 50px;
+        padding: 10px;
         margin: 0;
         border: none;
         height: 4vh;
-        width: rem(170);
+        position: absolute;
         font-size: rem(17);
+       transform: translateX(-40%);
     }
 }
 
@@ -134,10 +144,13 @@
 @keyframes vision {
     from {
         opacity: 0;
-        transform: translate(0, 100%);
+        width: 0px;
+        transform: translateX(-5%);
     }
 
     to {
         opacity: 1;
+        width: 100%;
+        transform: translateX(-40%);
     }
 }

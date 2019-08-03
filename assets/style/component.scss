@@ -1,26 +1,31 @@
+
 //Sizes
 $wh100:100%;
 $whBurger:40px;
-$loadingText: rem(50);
+
 
 //Fonts
 $some1:'Alice';
 $some2:'Literata';
 $some3:'LiterataIT';
 $some4:'RubikMonoOne';
+$some5:'OpenSans';
 
 //Colors
 $modalBackground:rgba(0, 0, 0, 0.5);
-$navBackground:#50d9f8;
+$hoverColorOne:rgba(0, 0, 0, 0.678);
 $hoverColorText:rgb(177, 177, 177);
 $btmColors:rgb(105, 105, 105);
-$colorText:rgb(0, 0, 0);
+$colorText:rgba(0, 0, 0, .8);
+$hoverArrow:rgba(0, 0, 0, 0.274) ;
 $colorBody: linear-gradient(to right bottom, #99f2cd, #68e8e4, #50d9f8, #54ccff, #7cbaff, #aba5ff, #d98ae7, #fd6bba, #ff537f, #ff543b);
-$colorCard:rgba(255, 255, 255, 0.233);
+$colorCard:rgba(255, 255, 255, .7);
 $colorShadowBTN:rgb(71, 255, 71);
-
+$colorBorderCardLT:#5D57579A;
+$colorBorderCardRB:#36313192;
+$colorPost:#feffc5;
 //Main colors 
-$defaul: #ffffff;
+$default: #ffffff;
 $primary:#000dff;
 $success: #26de81;
 $danger:#fc5c65;

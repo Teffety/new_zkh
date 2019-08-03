@@ -2,3 +2,214 @@
 @import '../mixin';
 @import '../component';
 @import '../function';
+@import '../media';
+
+#contacts {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-auto-rows: minmax(20vh, auto);
+    justify-content: space-around;
+    width: 100%;
+
+    @include contact;
+    .section__contact {
+        display: flex;
+        flex-direction: column;
+		text-align: center;
+		font-family: $some5;
+		font-size: rem(15);
+		color:$btmColors;
+    }
+
+    .section__requisite {
+        display: flex;
+        flex-direction: column;
+		text-align: center;
+		font-family: $some5;
+		font-size: rem(15);
+		color:$btmColors;
+    }
+
+    .section__map {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        display: flex;
+        margin: 10px;
+        justify-content: center;
+    }
+
+    .openForm {
+        position: fixed;
+        transform: rotate(270deg);
+        right: -2%;
+        bottom: 20%;
+        background: #50d9f8;
+        padding: 10px 15px;
+        border: 1px solid $colorBorderCardLT;
+        color: white;
+        font-size: rem(20);
+        border-radius: 30px;
+    }
+
+    .section__form {
+        position: fixed;
+        right: 2%;
+        bottom: 20%;
+        @include size(250px, 300px);
+        animation: opens .5s ease-in-out;
+        animation-direction: alternate;
+        @include askingForm;
+        .closeForm {
+            position: absolute;
+            top: -10px;
+            right: 10px;           
+			@include size(20px);
+			&::after,
+            &::before {
+                content: '';
+                @include size(15px, 2px);
+                position: absolute;
+                z-index: 20;
+            }
+
+            &::after {
+                background: $default;
+                transform: rotate(45deg);
+            }
+
+            &::before {
+                background: $default;
+                transform: rotate(-45deg);
+            }
+
+        }
+
+        .contact__form {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-rows: 20% 60% 20%;
+            width: 100%;
+            height: 100%;
+
+            .in__text {
+                grid-row: 1;
+                width: 100%;
+                height: 100%;
+                padding: 20px 10px 0px 0px;
+                position: relative;
+            }
+
+            .in__textArea {
+                grid-row: 2;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                margin: auto;
+                padding:10px 0;
+				position: relative;
+				align-items: flex-end;
+			
+				& label {
+                position: absolute;
+                transition: .3s;
+				color: white;
+				font-size: rem(20);
+                z-index: 0;
+                top: 50%;
+            }
+            }
+
+            & label {
+                position: absolute;
+                transition: .3s;
+                color: white;
+                z-index: 0;
+                font-size:rem(13);
+                top: 25px;
+            }
+
+            & input[type=text]{
+                position: absolute;
+                background-color: transparent;
+                outline: none;
+                font-size: rem(17);
+                border: none;
+                padding: 0 0 10px;
+                width: 100%;
+                border-bottom: 1px solid $btmColors;
+                z-index: 1;
+                transition: .3s;
+                color: white;
+
+                &:focus {
+                    border-bottom: 1px solid $warning;
+
+                    &~label {
+                        top: 0px;
+                        font-size: rem(10);
+
+                    }
+                }
+
+                &:not(:placeholder-shown)~label {
+                    top: 0px;
+                    font-size: rem(10);
+
+                }
+            }
+
+            & textarea {
+				resize: none;
+					position: absolute;
+					background-color: transparent;
+					outline: none;
+					font-size: rem(20);
+					border: none;
+					padding: 0 0 10px;
+					width: 100%;
+					border-bottom: 1px solid $btmColors;
+					z-index: 1;
+					transition: .3s;
+					color: white;
+
+					&:focus {
+						border-bottom: 1px solid $warning;
+
+						&~label {
+							top: 25%;
+							font-size: rem(12);
+
+						}
+					}
+
+					&:not(:placeholder-shown)~label {
+						top: 25%;
+						font-size: rem(12);
+
+					
+				}
+            }
+
+        }
+
+        input[type=submit] {
+            grid-row: 3;
+            font-size: rem(12);
+            border-radius: 5px;
+            border: none;
+            text-align: center;
+            cursor: pointer;
+            transition: .3s;
+            color: $btmColors;
+            background-color: #BF404000;
+            font-family: $some4;
+            border: 1px solid $btmColors;
+
+            &:focus,
+            &:hover {
+                background: #99f2cd;
+
+            }
+        }
+    }
+}

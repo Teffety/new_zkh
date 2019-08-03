@@ -5,11 +5,12 @@
             <router-view></router-view>
         </transition>
         <section class="news__search">
-             <img src="/assets/img/search.svg" class="iconSearch" @click.prevent="isOpen = !isOpen">
+            <div class="search__block">
+             <img src="/assets/img/search.svg" class="iconSearch" @click.prevent="isOpens()">
 <transition name="slide">
  <input type="search" class="searchNews__text" v-if="isOpen" v-model="search" placeholder="Поиск по заголовку">
 </transition>
-          
+          </div>
 
         </section>
         <section class="news__section">
@@ -20,7 +21,7 @@
                     <div class="text__info">
                         <p class="news__text text">{{info.text | deleteLongText}}</p>
                     </div>
-                    <router-link v-if="info.boolean" class="goPosts" :to="{name:'posts',params:{id:info.id }}">Продолжение...
+                    <router-link v-if="info.boolean" class="goPosts" tabindex="-1" :to="{name:'posts',params:{id:info.id }}">Продолжение...
                     </router-link>
                 </article>
                 <article class="news__article__info">
@@ -67,11 +68,18 @@
         },
         filters:{
         deleteLongText:value => value.length >= 100 ? (value.slice(0,101)) : value
+        },
+        methods:{
+            isOpens(){
+                this.isOpen = !this.isOpen;
+                this.search = "";
+            }
         }
         
 
 
-    }
+    };
+
 </script>
 
 <style lang="scss">

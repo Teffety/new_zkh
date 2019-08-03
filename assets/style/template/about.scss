@@ -2,8 +2,215 @@
 @import '../mixin';
 @import '../component';
 @import '../function';
+@import '../media';
 
 
-#about{
+#about {
+    display: grid;
+    width: 80vw;
+    grid-template-columns: repeat(2, 50%);
+    @include about;
+}
 
+.section__about__carusel {
+    width: 100%;
+    margin:auto;
+
+    .carusel {
+        width: 100%;
+        height: 500px;
+        display: flex;
+        margin: auto;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        flex-direction: row;
+        justify-content: space-around;
+        -webkit-box-align: center;
+        align-items: center;
+        position: relative;
+
+        .carusel__content {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+            .carusel__images {
+                max-height: 100%;
+                width: 100%;
+box-shadow: 0 0 20px black;
+            }
+        }
+
+        .prev,
+        .next {
+            position: absolute;
+            margin: auto;
+
+            span {
+                height: 30px;
+                width: 30px;
+                position: relative;
+                background-color: $hoverArrow;
+                border:1px unset transparent;
+                padding: 5px 14px;
+                border-radius: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::after,
+                &::before {
+                    content: '';
+                    height: 1px;
+                    width: 15px;
+                    position: absolute;
+                    background:$colorPost;
+                                    
+                }
+               
+            }
+        }
+
+        .prev {
+            left: 0;
+            span{
+                  &::after {
+                    transform-origin: left;
+                    transform: rotate(-35deg);
+                   
+                }
+
+                &::before {
+                    transform-origin: left;
+                    transform: rotate(35deg);
+                  
+                }
+                 &:hover {
+                      border: 1px inset;
+                     
+                 }
+                 &:hover::after {
+                     transform:rotate(-30deg)
+                 }
+                 &:hover::before {
+                     transform:rotate(30deg)
+                 }
+            }
+        }
+
+        .next {
+            right: 0;
+            span{
+                &::after {
+                    transform-origin: right;
+                    transform: rotate(35deg);
+                }
+
+                &::before {
+                    transform-origin: right;
+                    transform: rotate(-35deg);
+                }
+                 &:hover {
+                     border: 1px inset;
+
+                 }
+
+                 &:hover::after {
+                     transform: rotate(30deg)
+                 }
+
+                 &:hover::before {
+                     transform: rotate(-30deg)
+                 }
+            }
+        }
+    }
+}
+
+.section__about__info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: $some5;
+    font-size: rem(15);
+    color: $btmColors;
+}
+
+.section__about__files {
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+
+    h3 {
+        font-family: $some3;
+        text-transform: uppercase;
+        text-align: center;
+        color: $colorBorderCardRB;
+        padding: 30px;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+        li{
+             &:first-child {
+                 border-left: 1px solid $btmColors;
+             }
+
+             &:last-child {
+                 border-right: 1px solid $btmColors;
+             }
+            .documents__btn {
+                  padding: 10px;
+                  border: 1px solid $btmColors;
+                  border-right:none;
+                  border-left:none;
+                  
+                  width: 100%;
+                  background: transparent;
+                  font-size: rem(20);
+                  font-family: $some3;
+                  color: $colorPost;
+                 &.btn__active {
+                     background-color: $default;
+                     color:$modalBackground;
+                 }
+            }
+        }
+    }
+
+}
+
+.about__documents {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: $some5;
+    font-size: rem(15);
+    color: $btmColors;
+}
+
+.documents__list__ol {
+       padding: 0;
+       margin: auto;
+       -moz-hyphens: auto;
+       -webkit-hyphens: auto;
+       -ms-hyphens: auto;
+        color: $hoverArrow;
+        padding: 15px 0px;
+        .ul__documents{
+            padding: 5px 0;
+        }
+
+}
+
+.document__link {
+
+    font-family: $some5;
+     color: $default;
 }

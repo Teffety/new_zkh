@@ -28,16 +28,16 @@
         @media only screen and (max-width: $phoneWS) { @content; }
       }
       @else if $type == phoneMedium {
-        @media only screen and (min-width: $phoneWS + 1) and (max-width: $phoneWL - 1) { @content; }
+        @media only screen and (min-width: $phoneWS) and (max-width: $phoneWL - 1) { @content; }
       }
       @else if $type == phoneLarge {
-        @media only screen and (min-width: $phoneWL + 1) and (max-width: $tableWS - 1) { @content; }
+        @media only screen and (min-width: $phoneWL) and (max-width: $tableWS - 1) { @content; }
       }
       @else if $type == tableSize {
-        @media only screen and (min-width: $tableWS + 1) and (max-width: $desktopWS - 1) { @content; }
+        @media only screen and (min-width: $tableWS) and (max-width: $desktopWS - 1) { @content; }
       }
       @else if $type == desktopSmall {
-        @media only screen and (min-width: $desktopWS + 1) and (max-width: $desktopWL - 1) { @content; }
+        @media only screen and (min-width: $desktopWS) and (max-width: $desktopWL - 1) { @content; }
       }
       @else if $type ==  desktop {
         @media only screen and (min-width: $desktopWL) { @content; }
@@ -142,3 +142,27 @@
         }
     }
 }
+
+
+
+
+
+
+@mixin opensM($x,$y,$count){
+  transition-delay: 1s;
+  animation: #{'opened'+$count} .5s alternate;
+ transform:translateX($x) translateY($y);
+
+ @keyframes #{'opened'+$count} {
+  from{
+    opacity: 0;
+    transform:translateX(0px) translateY(0px);
+  }
+  to{
+  opacity: 1;
+    transform:translateX($x) translateY($y);
+  }
+}
+
+}
+

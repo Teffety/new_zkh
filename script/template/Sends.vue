@@ -10,33 +10,33 @@
                 <div class=clientInfo>
 
                     <div class="divForInput">
-                        <input type="text" tabindex="1" placeholder=" " v-model="firstName" autocomplete="off" required>
+                        <input type="text" tabindex="6" placeholder=" " v-model="firstName" autocomplete="off" required>
                         <label>Ваша фамилия<em>*</em></label>
 
                     </div>
                     <div class="divForInput">
-                        <input type="text" tabindex="2" placeholder=" " v-model="secondName" autocomplete="off" required>
+                        <input type="text" tabindex="7" placeholder=" " v-model="secondName" autocomplete="off" required>
                         <label>Ваше Имя<em>*</em></label>
 
                     </div>
                     <div class="divForInput">
-                        <input type="text" tabindex="3" placeholder=" " v-model="surName" autocomplete="off" required>
+                        <input type="text" tabindex="8" placeholder=" " v-model="surName" autocomplete="off" required>
                         <label>Ваше Отчество<em>*</em></label>
 
                     </div>
                     <div class="divForInput">
-                        <input type="tel" tabindex="4" placeholder=" " v-model="phone" autocomplete="off">
+                        <input type="tel" tabindex="9" placeholder=" " v-model="phone" autocomplete="off">
                         <label>Ваш телефон</label>
 
                     </div>
                     <div class="divForInput">
-                        <input type="text" tabindex="5" placeholder=" " v-model="street" autocomplete="off" required>
+                        <input type="text" tabindex="10" placeholder=" " v-model="street" autocomplete="off" required>
                         <label>Ваша улица и номер дома<em>*</em></label>
 
                     </div>
                     <div class="divForInput">
 
-                        <input type="text" tabindex="6" placeholder=" " v-model="home" autocomplete="off" required>
+                        <input type="text" tabindex="11" placeholder=" " v-model="home" autocomplete="off" required>
                         <label>Ваш номер квартиры<em>*</em<em>*</em></label>
                     </div>
                 </div>
@@ -45,25 +45,25 @@
 
                     <div class="divForInput">
 
-                        <input type="text" tabindex="7" placeholder=" " v-model="numberOne" autocomplete="off" required>
+                        <input type="text" tabindex="12" placeholder=" " v-model="numberOne" autocomplete="off" required>
                         <label>Номер вашего счетчика<em>*</em></label>
 
                     </div>
                     <div class="divForInput">
 
-                        <input type="text" tabindex="8" placeholder=" " v-model="numberTwo" autocomplete="off">
+                        <input type="text" tabindex="13" placeholder=" " v-model="numberTwo" autocomplete="off">
                         <label>Перд. показания</label>
 
                     </div>
                     <div class="divForInput">
                         
-                        <input type="text" tabindex="9" placeholder=" " v-model="numberThree" autocomplete="off" required>
+                        <input type="text" tabindex="14" placeholder=" " v-model="numberThree" autocomplete="off" required>
                         <label>Тек. показания<em>*</em></label>
 
                     </div>
                 </div>
                 <div class="clientSend">
-                    <input  type="submit" class="send__submit sumbit__sendFormInfo" tabindex="10" value="Отправить">
+                    <input  type="submit" class="send__submit sumbit__sendFormInfo" tabindex="15" value="Отправить">
                 </div>
 
             </form>
