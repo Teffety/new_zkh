@@ -124,16 +124,15 @@ legend {
     text-align: center;
 
     input[type=submit] {
-        background: #fffcb7;
+        background: $default;
         font-size: rem(15);
         padding: 10px 20px;
         border-radius: 5px;
         border: none;
         cursor: pointer;
         transition: .3s;
-        color:$default;
-        background-color: #fff9e7;
-    font-family: $some4;
+        color:$btmColors;
+        font-family: $some4;
         &:focus,
         &:hover {
         
